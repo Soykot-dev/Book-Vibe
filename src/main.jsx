@@ -2,11 +2,19 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import MainLayouts from './Layouts/MainLayouts'
+import Home from './Pages/Home/Home'
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <div className=""></div>
+    element: <MainLayouts />,
+    children: [
+      {
+        path: '/',
+        element: <Home />
+      }
+    ]
   }
 ])
 
