@@ -6,6 +6,7 @@ import MainLayouts from './Layouts/MainLayouts'
 import Home from './Pages/Home/Home'
 import ListedBook from './Pages/ListedBook/ListedBook'
 import PagesToRead from './Pages/PagesToRead/PagesToRead'
+import BookDetails from './Pages/BookDetails/BookDetails'
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,11 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home />
+      },
+      {
+        path: '/book-details/:id',
+        element: <BookDetails />,
+        loader: () => fetch('/book.json')
       },
       {
         path: '/listed-book',
