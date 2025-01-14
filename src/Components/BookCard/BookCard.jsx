@@ -1,6 +1,7 @@
+import PropTypes from 'prop-types';
 import star from '../../assets/star.png'
 const BookCard = ({ book }) => {
-    const { bookId, bookName, price, image, tags, rating, author } = book;
+    const { bookId, bookName, image, tags, rating, author } = book;
     return (
         <div className="border p-5 rounded-lg font-lato">
             <div className="flex justify-center items-center bg-base-200 rounded-lg py-6">
@@ -24,5 +25,9 @@ const BookCard = ({ book }) => {
         </div>
     );
 };
+
+BookCard.propTypes = {
+    book: PropTypes.object.isRequired
+}
 
 export default BookCard;
