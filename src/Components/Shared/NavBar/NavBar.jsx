@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
     const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
@@ -9,6 +10,14 @@ const NavBar = () => {
     const handleToggleTheme = (e) => {
         setTheme(e.target.checked ? 'synthwave' : 'light');
     }
+
+    const links =
+        <>
+            <li><NavLink to='/' className={({ isActive }) => isActive ? 'border border-green-500 font-semibold rounded-md px-4 py-2 text-green-500 hover:text-green-600 duration-100' : 'text-natural hover:underline duration-100'}>Home</NavLink></li>
+            <li><NavLink to='/listed-book' className={({ isActive }) => isActive ? 'border border-green-500 font-semibold rounded-md px-4 py-2 text-green-500 hover:text-green-600 duration-100' : 'text-natural hover:underline duration-100'}>Listed Book</NavLink></li>
+            <li><NavLink to='/pages-to-read' className={({ isActive }) => isActive ? 'border border-green-500 font-semibold rounded-md px-4 py-2 text-green-500 hover:text-green-600 duration-100' : 'text-natural hover:underline duration-100'}>Pages To Read</NavLink></li>
+        </>
+
     return (
         <div className="navbar bg-base-100 shadow-md font-lato">
             <div className="navbar-start">
@@ -29,36 +38,18 @@ const NavBar = () => {
                     </div>
                     <ul
                         tabIndex={0}
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                        <li><a>Item 1</a></li>
-                        <li>
-                            <a>Parent</a>
-                            <ul className="p-2">
-                                <li><a>Submenu 1</a></li>
-                                <li><a>Submenu 2</a></li>
-                            </ul>
-                        </li>
-                        <li><a>Item 3</a></li>
+                        className="menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                        {links}
                     </ul>
                 </div>
                 <a className="text-2xl font-black">Book Vibe</a>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1">
-                    <li><a>Item 1</a></li>
-                    <li>
-                        <details>
-                            <summary>Parent</summary>
-                            <ul className="p-2">
-                                <li><a>Submenu 1</a></li>
-                                <li><a>Submenu 2</a></li>
-                            </ul>
-                        </details>
-                    </li>
-                    <li><a>Item 3</a></li>
+                <ul className="menu-horizontal gap-4">
+                    {links}
                 </ul>
             </div>
-            <div className="navbar-end gap-5">
+            <div className="navbar-end gap-3">
                 <label className="swap swap-rotate">
                     {/* this hidden checkbox controls the state */}
                     <input onChange={handleToggleTheme} type="checkbox" className="theme-controller" checked={theme === 'synthwave'} />
@@ -80,8 +71,8 @@ const NavBar = () => {
                     </svg>
                 </label>
                 <div className="flex gap-3">
-                    <a className="px-6 text-white py-[9px] rounded-md bg-[#23BE0A]">Sign In</a>
-                    <a className="px-6 text-white py-[9px] rounded-md bg-[#59C6D2]">Sign Up</a>
+                    <a className="px-6 text-white py-[9px] rounded-md bg-[#23BE0A] hover:bg-green-500 cursor-pointer duration-100">Sign In</a>
+                    <a className="px-6 text-white py-[9px] rounded-md bg-[#59C6D2] hover:bg-[#48d7e7] cursor-pointer duration-100">Sign Up</a>
                 </div>
             </div>
         </div>
