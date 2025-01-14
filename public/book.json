@@ -1,157 +1,155 @@
-{
-    "books": [
-        {
-            "bookId": 1,
-            "bookName": "The Dating Playbook For Men",
-            "author": "Andrew Ferebee",
-            "image": "https://i.ibb.co.com/BsQ89qY/The-Dating-Playbook-For-Men.png",
-            "review": "A practical and empowering guide for men who want to improve their dating lives. Full of actionable tips and relatable stories, it provides valuable insights on confidence and communication.",
-            "totalPages": 234,
-            "rating": 4.5,
-            "category": "Self-Help",
-            "tags": [
-                "Dating",
-                "Relationships",
-                "Self-Improvement"
-            ],
-            "publisher": "CreateSpace Independent Publishing",
-            "yearOfPublishing": 2015
-        },
-        {
-            "bookId": 2,
-            "bookName": "Why Do You Hate Money?",
-            "author": "Joe Polish",
-            "image": "https://i.ibb.co.com/MRd5hYC/Why-Do-You-Hate-Money.png",
-            "review": "An engaging look at the mindset and strategies needed to overcome financial challenges. This book offers actionable advice to build wealth and confidence.",
-            "totalPages": 190,
-            "rating": 4.2,
-            "category": "Finance",
-            "tags": [
-                "Money Management",
-                "Personal Finance",
-                "Mindset"
-            ],
-            "publisher": "Piranha Marketing",
-            "yearOfPublishing": 2020
-        },
-        {
-            "bookId": 3,
-            "bookName": "The Hate U Give",
-            "author": "Angie Thomas",
-            "image": "https://i.ibb.co.com/HXNY1Vy/The-Hate-U-Give.png",
-            "review": "A powerful novel that tackles themes of race, identity, and justice through the eyes of a relatable protagonist. It’s both heart-wrenching and inspiring.",
-            "totalPages": 464,
-            "rating": 4.8,
-            "category": "Fiction",
-            "tags": [
-                "Social Justice",
-                "Young Adult",
-                "Contemporary"
-            ],
-            "publisher": "Balzer + Bray",
-            "yearOfPublishing": 2017
-        },
-        {
-            "bookId": 4,
-            "bookName": "The Scholarship Monthly Planner",
-            "author": "Jean O’Toole",
-            "image": "https://i.ibb.co.com/yqCrYyB/The-Scholarship-Monthly-Planner.png",
-            "review": "A comprehensive planner designed to help students effectively organize their scholarship applications and maximize their chances of success.",
-            "totalPages": 120,
-            "rating": 4.3,
-            "category": "Education",
-            "tags": [
-                "Planning",
-                "College",
-                "Scholarships"
-            ],
-            "publisher": "Morgan James Publishing",
-            "yearOfPublishing": 2020
-        },
-        {
-            "bookId": 5,
-            "bookName": "The Annotated Texas Family Code 2021",
-            "author": "Texas Legislative Council",
-            "image": "https://i.ibb.co.com/8Kyt18h/The-Annotated-Texas-Family-Code-2021.png",
-            "review": "A detailed and well-organized resource for legal professionals and anyone navigating family law in Texas. Includes annotations for better understanding.",
-            "totalPages": 732,
-            "rating": 4.7,
-            "category": "Law",
-            "tags": [
-                "Family Law",
-                "Legal Reference",
-                "Texas"
-            ],
-            "publisher": "Thomson Reuters",
-            "yearOfPublishing": 2021
-        },
-        {
-            "bookId": 6,
-            "bookName": "Loving Jesus",
-            "author": "Mark Allan Powell",
-            "image": "https://i.ibb.co.com/FgRwxcc/Loving-Jesus.png",
-            "review": "An inspiring exploration of faith and devotion. Powell’s writing is heartfelt and encourages readers to deepen their spiritual journey.",
-            "totalPages": 176,
-            "rating": 4.6,
-            "category": "Religion",
-            "tags": [
-                "Faith",
-                "Christianity",
-                "Spirituality"
-            ],
-            "publisher": "Fortress Press",
-            "yearOfPublishing": 2004
-        },
-        {
-            "bookId": 7,
-            "bookName": "The Lost Art of Good Conversation",
-            "author": "Sakyong Mipham",
-            "image": "https://i.ibb.co.com/F0RFHnJ/The-Lost-Art-of-Good-Conversation.png",
-            "review": "A thoughtful guide to building meaningful connections in the modern world. Mipham’s insights are timeless and practical.",
-            "totalPages": 208,
-            "rating": 4.5,
-            "category": "Communication",
-            "tags": [
-                "Mindfulness",
-                "Relationships",
-                "Personal Growth"
-            ],
-            "publisher": "Harmony Books",
-            "yearOfPublishing": 2017
-        },
-        {
-            "bookId": 8,
-            "bookName": "Cold-Case Christianity",
-            "author": "J. Warner Wallace",
-            "image": "https://i.ibb.co.com/wp7NLN9/Cold-Case-Christianity.png",
-            "review": "A fascinating book that applies forensic principles to Christian apologetics. Wallace’s background as a detective adds depth and credibility.",
-            "totalPages": 288,
-            "rating": 4.6,
-            "category": "Religion",
-            "tags": [
-                "Apologetics",
-                "Faith",
-                "Evidence"
-            ],
-            "publisher": "David C Cook",
-            "yearOfPublishing": 2013
-        },
-        {
-            "bookId": 9,
-            "bookName": "Spine of the Dragon",
-            "author": "Kevin J. Anderson",
-            "image": "https://i.ibb.co.com/6Hfz9tZ/Spine-of-the-Dragon.png",
-            "review": "An epic fantasy filled with intriguing characters, political intrigue, and a richly crafted world. A must-read for fans of the genre.",
-            "totalPages": 558,
-            "rating": 4.3,
-            "category": "Fantasy",
-            "tags": [
-                "Epic Fantasy",
-                "Adventure",
-                "World-Building"
-            ],
-            "publisher": "Tor Books",
-            "yearOfPublishing": 2019
-        }
-    ]
-}
+[
+    {
+        "bookId": 1,
+        "bookName": "The Dating Playbook For Men",
+        "author": "Andrew Ferebee",
+        "image": "https://i.ibb.co.com/BsQ89qY/The-Dating-Playbook-For-Men.png",
+        "review": "A practical and empowering guide for men who want to improve their dating lives. Full of actionable tips and relatable stories, it provides valuable insights on confidence and communication.",
+        "totalPages": 234,
+        "rating": 4.5,
+        "category": "Self-Help",
+        "tags": [
+            "Dating",
+            "Relationships",
+            "Self-Improvement"
+        ],
+        "publisher": "CreateSpace Independent Publishing",
+        "yearOfPublishing": 2015
+    },
+    {
+        "bookId": 2,
+        "bookName": "Why Do You Hate Money?",
+        "author": "Joe Polish",
+        "image": "https://i.ibb.co.com/MRd5hYC/Why-Do-You-Hate-Money.png",
+        "review": "An engaging look at the mindset and strategies needed to overcome financial challenges. This book offers actionable advice to build wealth and confidence.",
+        "totalPages": 190,
+        "rating": 4.2,
+        "category": "Finance",
+        "tags": [
+            "Money Management",
+            "Personal Finance",
+            "Mindset"
+        ],
+        "publisher": "Piranha Marketing",
+        "yearOfPublishing": 2020
+    },
+    {
+        "bookId": 3,
+        "bookName": "The Hate U Give",
+        "author": "Angie Thomas",
+        "image": "https://i.ibb.co.com/HXNY1Vy/The-Hate-U-Give.png",
+        "review": "A powerful novel that tackles themes of race, identity, and justice through the eyes of a relatable protagonist. It’s both heart-wrenching and inspiring.",
+        "totalPages": 464,
+        "rating": 4.8,
+        "category": "Fiction",
+        "tags": [
+            "Social Justice",
+            "Young Adult",
+            "Contemporary"
+        ],
+        "publisher": "Balzer + Bray",
+        "yearOfPublishing": 2017
+    },
+    {
+        "bookId": 4,
+        "bookName": "The Scholarship Monthly Planner",
+        "author": "Jean O’Toole",
+        "image": "https://i.ibb.co.com/yqCrYyB/The-Scholarship-Monthly-Planner.png",
+        "review": "A comprehensive planner designed to help students effectively organize their scholarship applications and maximize their chances of success.",
+        "totalPages": 120,
+        "rating": 4.3,
+        "category": "Education",
+        "tags": [
+            "Planning",
+            "College",
+            "Scholarships"
+        ],
+        "publisher": "Morgan James Publishing",
+        "yearOfPublishing": 2020
+    },
+    {
+        "bookId": 5,
+        "bookName": "The Annotated Texas Family Code 2021",
+        "author": "Texas Legislative Council",
+        "image": "https://i.ibb.co.com/8Kyt18h/The-Annotated-Texas-Family-Code-2021.png",
+        "review": "A detailed and well-organized resource for legal professionals and anyone navigating family law in Texas. Includes annotations for better understanding.",
+        "totalPages": 732,
+        "rating": 4.7,
+        "category": "Law",
+        "tags": [
+            "Family Law",
+            "Legal Reference",
+            "Texas"
+        ],
+        "publisher": "Thomson Reuters",
+        "yearOfPublishing": 2021
+    },
+    {
+        "bookId": 6,
+        "bookName": "Loving Jesus",
+        "author": "Mark Allan Powell",
+        "image": "https://i.ibb.co.com/FgRwxcc/Loving-Jesus.png",
+        "review": "An inspiring exploration of faith and devotion. Powell’s writing is heartfelt and encourages readers to deepen their spiritual journey.",
+        "totalPages": 176,
+        "rating": 4.6,
+        "category": "Religion",
+        "tags": [
+            "Faith",
+            "Christianity",
+            "Spirituality"
+        ],
+        "publisher": "Fortress Press",
+        "yearOfPublishing": 2004
+    },
+    {
+        "bookId": 7,
+        "bookName": "The Lost Art of Good Conversation",
+        "author": "Sakyong Mipham",
+        "image": "https://i.ibb.co.com/F0RFHnJ/The-Lost-Art-of-Good-Conversation.png",
+        "review": "A thoughtful guide to building meaningful connections in the modern world. Mipham’s insights are timeless and practical.",
+        "totalPages": 208,
+        "rating": 4.5,
+        "category": "Communication",
+        "tags": [
+            "Mindfulness",
+            "Relationships",
+            "Personal Growth"
+        ],
+        "publisher": "Harmony Books",
+        "yearOfPublishing": 2017
+    },
+    {
+        "bookId": 8,
+        "bookName": "Cold-Case Christianity",
+        "author": "J. Warner Wallace",
+        "image": "https://i.ibb.co.com/wp7NLN9/Cold-Case-Christianity.png",
+        "review": "A fascinating book that applies forensic principles to Christian apologetics. Wallace’s background as a detective adds depth and credibility.",
+        "totalPages": 288,
+        "rating": 4.6,
+        "category": "Religion",
+        "tags": [
+            "Apologetics",
+            "Faith",
+            "Evidence"
+        ],
+        "publisher": "David C Cook",
+        "yearOfPublishing": 2013
+    },
+    {
+        "bookId": 9,
+        "bookName": "Spine of the Dragon",
+        "author": "Kevin J. Anderson",
+        "image": "https://i.ibb.co.com/6Hfz9tZ/Spine-of-the-Dragon.png",
+        "review": "An epic fantasy filled with intriguing characters, political intrigue, and a richly crafted world. A must-read for fans of the genre.",
+        "totalPages": 558,
+        "rating": 4.3,
+        "category": "Fantasy",
+        "tags": [
+            "Epic Fantasy",
+            "Adventure",
+            "World-Building"
+        ],
+        "publisher": "Tor Books",
+        "yearOfPublishing": 2019
+    }
+]
