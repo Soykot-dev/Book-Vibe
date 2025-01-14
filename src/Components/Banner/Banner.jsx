@@ -1,7 +1,7 @@
 import bookBanner from '../../assets/book-banner.png'
 const Banner = () => {
     return (
-        <div className='flex flex-col md:flex-row md:gap-10 justify-center md:items-center bg-base-200 rounded-lg md:rounded-3xl px-8 md:px-0 py-8 md:py-16 mb-16'>
+        <div className='flex flex-col md:flex-row md:gap-10 justify-center md:items-center bg-base-200 rounded-lg md:rounded-3xl px-8 md:px-0 py-8 md:py-16'>
             <div className="">
                 <h1 className="text-3xl md:text-6xl font-prata font-black bg-gradient-to-r from-success via-primary to-error text-transparent bg-clip-text animate-gradient bg-300%">Books to freshen up</h1>
                 <h1 className="mt-3 md:mt-8 pl-1 pb-2 text-3xl md:text-6xl font-prata font-black bg-gradient-to-r from-success via-primary to-error text-transparent bg-clip-text animate-gradient bg-300%">your bookshelf</h1>
