@@ -1,10 +1,17 @@
 import { useLoaderData, useParams } from "react-router-dom";
+import { saveReadBooks, saveWishlistBooks } from "../../Utilities/localStorage";
 
 const BookDetails = () => {
     const books = useLoaderData();
     const { id } = useParams();
     const book = books?.find(book => book.bookId === parseInt(id));
     const { bookName, image, review, tags, rating, author, totalPages, publisher, yearOfPublishing } = book;
+    const handleAddToLsReadBooks = (id) => {
+        saveReadBooks(id);
+    }
+    const handleAddToLsWishlistBooks = (id) => {
+        saveWishlistBooks(id);
+    }
     return (
         <div className="flex flex-col md:flex-row justify-center md:gap-10 mx-3 md:mx-32 mb-16 border p-3 md:p-5 rounded-md">
             <div className="flex justify-center items-center md:w-1/2 bg-base-200 py-9 md:py-16 rounded-md md:rounded-2xl">
@@ -20,7 +27,7 @@ const BookDetails = () => {
                 <div className="mt-3">
                     <span className="md:text-lg font-semibold mr-1 md:mr-2">Tag:</span>
                     {
-                        tags?.map(tag => <span key={tag} className="text-xs md:text-sm bg-base-200 text-[#23BE0A] px-2  md:px-4 pt-1 pb-[6px] rounded-full mr-2 md:mr-3">#{tag}</span>)
+                        tags?.map(tag => <span key={tag} className="text-xs md:text-sm bg-base-200 text-[#23BE0A] px-2  md:px-3 pt-1 pb-[6px] rounded-full mr-2 md:mr-3">#{tag}</span>)
                     }
                 </div>
                 <hr className="mt-5 mb-2" />
@@ -39,7 +46,7 @@ const BookDetails = () => {
                     </div>
                 </div>
                 <div className="flex gap-4 mt-4">
-                    <a className="relative inline-flex items-center justify-start px-10 py-3 overflow-hidden  transition-all bg-[#23BE0A] rounded-md group">
+                    <a onClick={() => handleAddToLsReadBooks(id)} className="relative inline-flex items-center justify-start px-10 py-3 overflow-hidden  transition-all bg-[#23BE0A] rounded-md group cursor-pointer">
                         <span className="absolute top-0 right-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-[#248f13] rounded group-hover:-mr-4 group-hover:-mt-4">
                             <span className="absolute top-0 right-0 w-5 h-5 rotate-45 translate-x-1/2 -translate-y-1/2 bg-white"></span>
                         </span>
@@ -48,7 +55,7 @@ const BookDetails = () => {
                     </a>
 
 
-                    <a className="relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold text-indigo-600 transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-[#59C6D2] group">
+                    <a onClick={() => handleAddToLsWishlistBooks(id)} className="relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold text-indigo-600 transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-[#59C6D2] group cursor-pointer">
                         <span className="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-indigo-600 group-hover:h-full"></span>
                         <span className="absolute right-0 pr-4 duration-200 ease-out group-hover:translate-x-12">
                             <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
