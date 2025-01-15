@@ -7,6 +7,7 @@ import Home from './Pages/Home/Home'
 import ListedBook from './Pages/ListedBook/ListedBook'
 import PagesToRead from './Pages/PagesToRead/PagesToRead'
 import BookDetails from './Pages/BookDetails/BookDetails'
+import { Toaster } from 'react-hot-toast'
 
 const router = createBrowserRouter([
   {
@@ -37,5 +38,9 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <RouterProvider router={router} />
+    <Toaster
+      position="top-center"
+      reverseOrder={false}
+    />
   </StrictMode>,
 )

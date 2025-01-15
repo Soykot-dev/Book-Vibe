@@ -1,3 +1,5 @@
+import toast from "react-hot-toast";
+
 const getReadBooks = () => {
   let readBook = [];
   const storedReadBook = localStorage.getItem("read-books");
@@ -21,12 +23,12 @@ const saveReadBooks = (bookId) => {
   const isExist = readBooks.find((id) => id === bookId);
   if (isExist) {
     removeWishlistBooks(bookId);
-    return alert("Errorrrrrrrrrr!");
+    return toast.error("You have already add this book!");
   } else {
     readBooks.push(bookId);
     removeWishlistBooks(bookId);
     localStorage.setItem("read-books", JSON.stringify(readBooks));
-    return alert("Save!!!!!!");
+    return toast.success("Book successfully added in read books!");
   }
 };
 
@@ -36,11 +38,11 @@ const saveWishlistBooks = (bookId) => {
   const isExistReadBooks = readBooks.find((id) => id === bookId);
   const isExist = wishlistBooks.find((id) => id === bookId);
   if (isExist || isExistReadBooks) {
-    return alert("Erorrrrrr");
+    return toast.error("You have already add this book!");
   } else {
     wishlistBooks.push(bookId);
     localStorage.setItem("wishlist-books", JSON.stringify(wishlistBooks));
-    alert("Successssss");
+    return toast.success("Book successfully added in wishlist books!")
   }
 };
 
