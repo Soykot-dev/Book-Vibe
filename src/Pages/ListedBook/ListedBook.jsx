@@ -77,10 +77,10 @@ const ListedBook = () => {
                     </TabList>
 
                     <TabPanel>
-                        <WishlistBooks displayBooks={displayBooks} ></WishlistBooks>
+                        <ReadBooks displayBooks={displayBooks} ></ReadBooks>
                     </TabPanel>
                     <TabPanel>
-                        <ReadBooks displayBooks={displayBooks} ></ReadBooks>
+                        <WishlistBooks displayBooks={displayBooks} ></WishlistBooks>
                     </TabPanel>
                 </Tabs>
             </div>

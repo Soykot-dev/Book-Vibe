@@ -2,8 +2,9 @@ import PropTypes from "prop-types";
 import locationIcon from '../../assets/location.png'
 import peopleIcon from '../../assets/people.png'
 import fileIcon from '../../assets/file.png'
+import { Link } from "react-router-dom";
 const ListedBooksCard = ({ book }) => {
-    const { bookName, image, tags, author, totalPages, publisher, yearOfPublishing, category, rating } = book;
+    const { bookId, bookName, image, tags, author, totalPages, publisher, yearOfPublishing, category, rating } = book;
     return (
         <div className="flex flex-col md:flex-row gap-5 border hover:border-success duration-200 rounded-lg p-3 md:p-5 mb-5">
             <div className="flex justify-center items-center rounded-lg bg-base-200 py-5 px-10">
@@ -38,7 +39,7 @@ const ListedBooksCard = ({ book }) => {
                 <div className="flex gap-1 md:gap-3">
                     <div className="rounded-full text-xs md:text-base md:px-4 px-2 py-1 md:py-[5px] bg-[#328eff67]"><span className="text-[#328EFF]">Category: {category}</span></div>
                     <div className="rounded-full text-xs md:text-base md:px-4 px-2 py-1 md:py-[5px] bg-[#ffad337d]"><span className="text-[#FFAC33]">Rating: {rating}</span></div>
-                    <div className="rounded-full text-xs md:text-base md:px-4 px-2 py-1 md:py-[5px] bg-[#23BE0A]"><button className="text-white">View Details</button></div>
+                    <div className="rounded-full text-xs md:text-base md:px-4 px-2 py-1 md:py-[5px] bg-[#23BE0A]"><Link to={`/book-details/${bookId}`}><button className="text-white">View Details</button></Link></div>
                 </div>
             </div>
         </div>
