@@ -1,98 +1,89 @@
-import { Link, Outlet, useLocation } from 'react-router-dom';
 import dropdownPng from '../../assets/dropdown.png';
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
+import ReadBooks from '../../Components/ReadBooks/ReadBooks';
+import WishlistBooks from '../../Components/WishlistBooks/WishlistBooks';
+import { getReadBooks, getWishlistBooks } from '../../Utilities/localStorage';
+import { useLoaderData } from 'react-router-dom';
 
 const ListedBook = () => {
-    const location = useLocation();
-    const [tabIdx, setTabIdx] = useState(0);
+    const [tabIndex, setTabIndex] = useState(0);
+    const [dropdownText, setDropdownText] = useState('Sort By');
+    const [books, setBooks] = useState([]);
+    const [displayBooks, setDisplayBooks] = useState([]);
+    const allBooksData = useLoaderData();
     useEffect(() => {
-        if (location.pathname === '/listed-book') {
-            setTabIdx(0);
-        } else if (location.pathname === '/listed-book/wishlist-book') {
-            setTabIdx(1);
+        const readBooks = getReadBooks();
+        const wishlistBooks = getWishlistBooks();
+        if (tabIndex == 0) {
+            const filterBooks = allBooksData?.filter(book => readBooks.includes(book.bookId.toString()));
+            setBooks(filterBooks);
+            setDisplayBooks(filterBooks);
+        } else {
+            const filterBooks = allBooksData?.filter(book => wishlistBooks.includes(book.bookId.toString()));
+            setBooks(filterBooks);
+            setDisplayBooks(filterBooks);
         }
-    }, [location]);
-
-    const handleTabIdx = (idx) => {
-        setTabIdx(idx);
-    };
-
+        setDropdownText('Sort By');
+    }, [tabIndex, allBooksData]);
+    const handleSortBooks = (value) => {
+        let sortedBooks = [...books];
+        if (value === 'rating') {
+            sortedBooks.sort((a, b) => b.rating - a.rating)
+            setDropdownText('Rating');
+        }
+        else if (value === 'numberOfPages') {
+            sortedBooks.sort((a, b) => b.totalPages - a.totalPages)
+            setDropdownText('Number of Pages');
+        }
+        else if (value === 'publisherYear') {
+            sortedBooks.sort((a, b) => b.yearOfPublishing - a.yearOfPublishing)
+            setDropdownText('Publisher Year');
+        }
+        setDisplayBooks(sortedBooks);
+    }
     return (
-        <div className="mx-16 my-5 font-lato">
+        <div className="mx-3 md:mx-16 md:my-5 font-lato">
             <div className="bg-base-300 py-8 rounded-2xl">
                 <h2 className="text-3xl font-extrabold text-center">Books</h2>
             </div>
-            <div className="flex justify-center my-7">
+            <div className="flex justify-center my-3 md:my-7">
                 <div className="dropdown dropdown-end">
                     <div
                         tabIndex={0}
                         role="button"
-                        className="flex items-center justify-center gap-2 bg-[#23BE0A] text-white px-6 py-3 rounded-md font-semibold m-1"
+                        className="flex items-center justify-center gap-2 bg-[#23BE0A] text-white px-3 md:px-6 py-2
+                         md:py-3 rounded-md font-semibold m-1"
                     >
-                        <span>Sort By</span>
+                        <span>{dropdownText}</span>
                         <img className="w-4 h-3 mt-1" src={dropdownPng} alt="" />
                     </div>
                     <ul
                         tabIndex={0}
                         className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow"
                     >
-                        <li><a>Item 1</a></li>
-                        <li><a>Item 2</a></li>
+                        <li onClick={() => handleSortBooks('rating')}><a>Rating</a></li>
+                        <li onClick={() => handleSortBooks('numberOfPages')}><a>Number of pages</a></li>
+                        <li onClick={() => handleSortBooks('publisherYear')}><a>Publisher year</a></li>
                     </ul>
                 </div>
             </div>
-            <div className="flex items-center -mx-4 overflow-x-auto overflow-y-hidden sm:justify-left flex-nowrap">
-                {/* Tab 1 */}
-                <Link
-                    to="/listed-book"
-                    onClick={() => handleTabIdx(0)}
-                    className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${
-                        tabIdx === 0
-                            ? 'border border-b-0 rounded-t-lg font-semibold'
-                            : 'border-b'
-                    }`}
-                >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="w-4 h-4"
-                    >
-                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
-                    </svg>
-                    <span>Read Books</span>
-                </Link>
-                {/* Tab 2 */}
-                <Link
-                    to="/listed-book/wishlist-book"
-                    onClick={() => handleTabIdx(1)}
-                    className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${
-                        tabIdx === 1
-                            ? 'border border-b-0 rounded-t-lg font-semibold'
-                            : 'border-b'
-                    }`}
-                >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="w-4 h-4"
-                    >
-                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-                    </svg>
-                    <span>Wishlist Books</span>
-                </Link>
+            <div className="">
+                <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
+                    <TabList >
+                        <Tab>Read Books</Tab>
+                        <Tab>Wishlist Books</Tab>
+                    </TabList>
+
+                    <TabPanel>
+                        <WishlistBooks displayBooks={displayBooks} ></WishlistBooks>
+                    </TabPanel>
+                    <TabPanel>
+                        <ReadBooks displayBooks={displayBooks} ></ReadBooks>
+                    </TabPanel>
+                </Tabs>
             </div>
-            <Outlet />
         </div>
     );
 };
